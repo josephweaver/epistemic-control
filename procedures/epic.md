@@ -1,16 +1,32 @@
-# Epic Procedure
+# Epic
 
-Last updated: 2026-06-26
+Last updated: 2026-07-04
 
 ## Purpose
 
-This document defines the procedure for creating a new implementation epic.
+This document defines how to create a new implementation epic.
 
 An epic describes a significant architectural capability that will be implemented through a sequence of small implementation slices.
 
 The purpose of an epic is **planning**, not implementation.
 
-Implementation is performed through individual slices created according to `epic-slice-procedure.md`.
+Implementation is performed through individual slices created according to `epic-slice.md`.
+
+---
+
+# Precision And Language
+
+When explaining current state and target state in chat, be as precise as the
+available evidence allows. Avoid jargon, vague labels, and ambiguous words.
+
+Prefer naming the actual capability, package, command, workflow, file, or
+behavior being discussed. If a statement is an inference, say that it is an
+inference. If evidence is missing, say what evidence is missing.
+
+Documentation may be more detailed than chat, but it should still use precise
+language. Do not use broad terms such as "integration", "runtime", "manager",
+or "support" unless the document explains exactly what the term means in that
+context.
 
 ---
 
@@ -156,6 +172,37 @@ Avoid duplicating architectural documentation.
 
 ---
 
+## Current State
+
+Describe the state of the project before the epic begins.
+
+Include both levels:
+
+* Strategic level: what capability, architecture, ownership boundary, or product
+  posture exists today.
+* Operational level: what concrete behavior, workflow, command, package,
+  integration, or artifact exists today.
+
+The current state should make clear why the epic is needed.
+
+---
+
+## Target State
+
+Describe the state of the project after the epic is complete.
+
+Include both levels:
+
+* Strategic level: what capability, architecture, ownership boundary, or product
+  posture will exist after the epic.
+* Operational level: what concrete behavior, workflow, command, package,
+  integration, or artifact will exist after the epic.
+
+The target state should describe the intended result of the epic without
+collapsing the epic into implementation details.
+
+---
+
 ## Proposed Slices
 
 This section is a planning aid.
@@ -205,7 +252,7 @@ Example:
 
 ---
 
-# Planning Procedure
+# Planning Workflow
 
 The AI should guide the human through the planning process.
 
@@ -224,12 +271,12 @@ Only after the epic is **Ready** should implementation slices be written.
 
 ---
 
-# Relationship to Slice Procedure
+# Relationship To Slice Instructions
 
 Implementation slices are created using:
 
 ```text
-docs/epics/epic-slice-procedure.md
+procedures/epic-slice.md
 ```
 
 Each slice should represent one focused implementation task.

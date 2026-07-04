@@ -3,7 +3,7 @@
 After each significant coding session, create a markdown record in:
 
 ```text
-epi_ctl/YYYYMMDD.md
+observations/YYYYMMDD.md
 ```
 
 where `YYYYMMDD` is today's date so files sort chronologically.
@@ -11,7 +11,7 @@ where `YYYYMMDD` is today's date so files sort chronologically.
 Example:
 
 ```text
-epi_ctl/20260602.md
+observations/20260602.md
 ```
 
 ---
@@ -45,11 +45,11 @@ The standard is:
 
 ---
 
-# Audit Procedure
+# Audit Workflow
 
 1. Before creating a new audit, check whether previous audits contain pending retention reviews.
 
-   Inspect recent `epi_ctl/*.md` files for:
+   Inspect recent `observations/*.md` files for:
 
    ```text
    Retention Follow-Up Required: Yes
@@ -111,7 +111,7 @@ The standard is:
    Same-day audits use:
 
    ```text
-   epi_ctl/YYYYMMDD.md
+   observations/YYYYMMDD.md
    ```
 
    Retention reviews use the retention-chain file naming rules below.
@@ -222,15 +222,15 @@ Retention Follow-Up Required: No
 Original audit:
 
 ```text
-epi_ctl/20260624.md
+observations/20260624.md
 ```
 
 Follow-up reviews:
 
 ```text
-epi_ctl/20260624_T3.md
-epi_ctl/20260624_T14.md
-epi_ctl/20260624_T180.md
+observations/20260624_T3.md
+observations/20260624_T14.md
+observations/20260624_T180.md
 ```
 
 The date portion always refers to the original development session being measured.
@@ -240,7 +240,7 @@ The suffix indicates the retention horizon.
 Do not create:
 
 ```text
-epi_ctl/20260627.md
+observations/20260627.md
 ```
 
 for a T+3 review.
@@ -248,7 +248,7 @@ for a T+3 review.
 Use:
 
 ```text
-epi_ctl/20260624_T3.md
+observations/20260624_T3.md
 ```
 
 so all retention reviews remain grouped with the original session.

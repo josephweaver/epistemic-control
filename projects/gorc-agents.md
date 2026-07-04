@@ -371,7 +371,7 @@ At the end of a coding session:
 4. Create or update:
 
 ```text
-../epistemic-control/epi_ctl/YYYYMMDD.md
+../epistemic-control/observations/YYYYMMDD.md
 ```
 
 The goal is not merely successful code generation.
