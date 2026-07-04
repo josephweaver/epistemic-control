@@ -3,11 +3,12 @@ Review Process:
 Perform a high-fidelity implementation review of the current feature.
 
 Goal:
-Help me understand exactly what was implemented, what changed, and whether it matches the epic design.
+Help me understand exactly what was implemented, what changed, and whether it
+matches the Strategic Concept and Operational Slice design.
 
 Please do the following:
 
-1. Read the relevant epic/design docs first.
+1. Read the relevant Strategic Concept and Operational Slice docs first.
 2. Inspect the actual git diff of this branch against main.
 3. Summarize the implementation in execution order, not file order.
 4. for each  new or changed public API, struct, function, table, config field, CLI flag, or test do the following
@@ -16,7 +17,8 @@ Please do the following:
         - Why it appears to exist
         - What assumptions it encodes
         - What could break if the assumption is wrong
-    - Compare the implementation against the epic:
+    - Compare the implementation against the Strategic Concept and Operational
+      Slice:
         - Fully implemented
         - Partially implemented
         - Not implemented

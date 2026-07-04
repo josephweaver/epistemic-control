@@ -506,7 +506,7 @@ AI must report all new files created and explain their purpose.
 
 # Examples
 
-## Human-Directed Feature Slice
+## Human-Directed Operational Slice
 
 ```text
 EC-4 / feature / file(3)+test+doc
@@ -547,7 +547,7 @@ Meaning:
 
 ---
 
-## Three-File Feature Slice
+## Three-File Operational Slice
 
 ```text
 EC-3 / feature / file(3)+test+doc

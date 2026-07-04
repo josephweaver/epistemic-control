@@ -948,7 +948,7 @@ Suggested interventions:
 * README creation
 * WHY_STATE.md documents
 * architecture diagrams
-* smaller implementation slices
+* smaller Operational Slices
 * active recall exercises
 * delayed self-quizzing
 * manual modification tasks
