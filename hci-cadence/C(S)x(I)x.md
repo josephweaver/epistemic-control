@@ -1,4 +1,4 @@
-# HCI Schema: concept(slice)+ (impl)+
+# HCI Cadence: C(S)x(I)x
 
 ## Purpose
 
@@ -15,7 +15,7 @@ Use `hci-levels.md` for HCI specification details.
 ## Notation
 
 ```text
-concept(slice)+ (impl)+
+C(S)x(I)x
 ```
 
 Meaning:
