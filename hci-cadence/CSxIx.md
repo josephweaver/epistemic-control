@@ -1,4 +1,4 @@
-# HCI Cadence: C(S)x(I)x
+# HCI Cadence: CSxIx
 
 ## Purpose
 
@@ -15,7 +15,7 @@ Use `hci-levels.md` for HCI specification details.
 ## Notation
 
 ```text
-C(S)x(I)x
+CSxIx
 ```
 
 Meaning:

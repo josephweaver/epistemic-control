@@ -60,11 +60,13 @@ Validate the product.
 - Parentheses group steps that repeat together.
 - Lowercase `x` means one or more repetitions of the preceding token or
   parenthesized group.
+- A hyphen `-` means zero or one instance of the preceding token or
+  parenthesized group.
 
 ## Examples
 
 ```text
-C(S)x(I)x.md
+CSxIx.md
 ```
 
 Meaning:
@@ -93,13 +95,15 @@ Meaning:
 - Perform one Review after the repeated slice-implementation work is complete.
 
 ```text
-Ix (Vibe Coding).md
+(C-S-I)x (vibe).md
 ```
 
 Meaning:
 
-- Perform one or more implementation passes without first defining a Strategic
-  Concept or Operational Slice.
+- Repeat one or more exploratory passes.
+- In each pass, optionally define or revise a Strategic Concept.
+- In each pass, optionally define or revise an Operational Slice.
+- In each pass, perform one Implementation.
 - This is the cadence commonly called vibe coding.
 
 ```text
@@ -135,10 +139,10 @@ document.
 
 Examples:
 
-- `C(S)x(I)x.md` has title `HCI Cadence: C(S)x(I)x`.
+- `CSxIx.md` has title `HCI Cadence: CSxIx`.
 - `C(SI)x.md` has title `HCI Cadence: C(SI)x`.
 - `C(SI)x(R).md` has title `HCI Cadence: C(SI)x(R)`.
-- `Ix (Vibe Coding).md` has title `HCI Cadence: Ix`.
+- `(C-S-I)x (vibe).md` has title `HCI Cadence: (C-S-I)x`.
 - `CSxIxPxVx (waterfall).md` has title `HCI Cadence: CSxIxPxVx`.
 - `C((SxIx)PC)x (scrum).md` has title `HCI Cadence: C((SxIx)PC)x`.
 
@@ -146,8 +150,8 @@ Examples:
 
 | Cadence | Use When |
 | --- | --- |
-| `Ix` | Exploratory local coding. |
+| `(C-S-I)x` | Exploratory local coding. |
 | `C(SI)x` | Learning from each slice before designing the next. |
-| `C(S)x(I)x` | Planning slices first, then implementing. |
+| `CSxIx` | Planning slices first, then implementing. |
 | `CSxIxPxVx` | Waterfall. |
 | `C((SxIx)PC)x` | Scrum-like cycles. |

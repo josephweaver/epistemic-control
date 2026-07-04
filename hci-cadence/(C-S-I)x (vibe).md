@@ -1,10 +1,10 @@
-# HCI Cadence: Ix
+# HCI Cadence: (C-S-I)x
 
 ## Purpose
 
 This cadence describes what is commonly called vibe coding: repeated
-implementation activity without first defining a Strategic Concept or approved
-Operational Slice.
+implementation activity where a Strategic Concept or Operational Slice may be
+added when useful, but neither is required before each implementation pass.
 
 Use this label when the session is intentionally exploratory and the human
 accepts that the work may discover its own direction as code is written.
@@ -12,12 +12,15 @@ accepts that the work may discover its own direction as code is written.
 ## Notation
 
 ```text
-Ix
+(C-S-I)x
 ```
 
 Meaning:
 
-- Perform one or more implementation passes.
+- Repeat one or more exploratory passes.
+- In each pass, optionally define or revise a Strategic Concept.
+- In each pass, optionally define or revise an Operational Slice.
+- In each pass, perform one Implementation.
 - Let the next edit be guided by immediate feedback, visible code shape, runtime
   behavior, or the human's next instruction.
 - Do not require a Strategic Concept document before starting.
@@ -37,7 +40,7 @@ Common risks:
 
 ## Required Guardrails
 
-Even in `Ix`, use:
+Even in `(C-S-I)x`, use:
 
 ```text
 hci-levels.md
