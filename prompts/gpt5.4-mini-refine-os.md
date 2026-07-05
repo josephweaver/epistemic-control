@@ -1,6 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\execution-observability\009-submission-log-read-api.md
+docs\concepts\execution-observability\011-update-observability-docs-and-smoke.md
 
 Analyze the operational slice and produce a concise implementation plan only.
 
