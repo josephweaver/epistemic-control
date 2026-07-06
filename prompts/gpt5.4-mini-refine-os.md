@@ -1,6 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\dependency-aware-workflows\007-capture-typed-step-outputs.md
+docs\concepts\dependency-aware-workflows\009-handle-empty-fanout-and-auto-advance.md
 
 Analyze the operational slice and produce a concise implementation plan only.
 
