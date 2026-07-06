@@ -1,10 +1,13 @@
-Please migrate the following Strategic Concept (SC) from
+Please migrate the following Strategic Concept(s) (SC) from
  
-docs\concepts\source-control-resolution-and-cache
+docs\concepts\architectural-refinement-1
+docs\concepts\dependency-aware-workflows
 
 to
 
-docs\concepts\complete\<SR NAME>
+docs\concepts\complete\<SR NAME 1>
+...
+docs\concepts\complete\<SR NAME n>
 
 . Where <SR NAME> is the leaf directory name in the from.
 

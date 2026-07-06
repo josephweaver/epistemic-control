@@ -1,7 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\dependency-aware-workflows\009-handle-empty-fanout-and-auto-advance.md
-
+docs\concepts\dependency-aware-workflows\010-propagate-step-and-workflow-failure.md
 Analyze the operational slice and produce a concise implementation plan only.
 
 Use "EC-3 / operational slice / files(4)+test+doc" with CSx(IR)x Cadence

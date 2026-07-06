@@ -1,6 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\dependency-aware-workflows\009-handle-empty-fanout-and-auto-advance.md
+docs\concepts\architectural-refinement-1\002c-persist-irreducible-logical-outputs.md
 
 Then implement and test the approved plan from the prior analysis.
 
