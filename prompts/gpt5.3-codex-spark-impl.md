@@ -1,6 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\execution-observability\011-update-observability-docs-and-smoke.md
+docs\concepts\dependency-aware-workflows\007-capture-typed-step-outputs.md
 
 Then implement and test the approved plan from the prior analysis.
 

@@ -1,6 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\execution-observability\011-update-observability-docs-and-smoke.md
+docs\concepts\dependency-aware-workflows\007-capture-typed-step-outputs.md
 
 Analyze the operational slice and produce a concise implementation plan only.
 
