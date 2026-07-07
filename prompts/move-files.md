@@ -1,7 +1,6 @@
 Please migrate the following Strategic Concept(s) (SC) from
  
-docs\concepts\architectural-refinement-1
-docs\concepts\dependency-aware-workflows
+docs\concepts\resource-constrained-work-admission
 
 to
 

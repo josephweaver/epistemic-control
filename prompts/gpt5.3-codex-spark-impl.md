@@ -1,23 +1,23 @@
 Please read operational slice (OS):
 
-docs\concepts\architectural-refinement-1\002c-persist-irreducible-logical-outputs.md
+docs\concepts\data-assets-and-materialized-outputs\011-fake-hpcc-artifact-and-data-asset-smoke-path.md
 
 Then implement and test the approved plan from the prior analysis.
 
-Use "EC-3 / operational slice / files(4)+test+doc" with CSx(IR)x Cadence
+Use "EC-3 / operational slice / files(10)+test+doc+newfiles+cleanup" 
 
 Reference: 
 ..\epistemic-control\hci-levels.md
-..\epistemic-control\hci-cadence\CSx(IR)x.md
 
 Constraints:
 
 * Prefer mechanical, behavior-preserving changes.
 * Do not redesign beyond the operational slice.
-* Modify no more than 4 implementation files unless the OS explicitly requires more.
 * Add or update tests required by the slice.
 * Keep changes small and reviewable.
 * Preserve existing public behavior except where the OS requires a change.
+
+
 
 ---
 
