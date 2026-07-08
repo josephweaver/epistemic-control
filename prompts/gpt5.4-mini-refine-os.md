@@ -1,10 +1,10 @@
 Please read operational slice (OS):
 
-docs\concepts\data-assets-and-materialized-outputs\011-fake-hpcc-artifact-and-data-asset-smoke-path.md
+docs\concepts\geospatial-worker-plugins\010-cdl-yanroy-fixture-workflow-and-docs.md
 
 Analyze the operational slice and produce a concise implementation plan only for gpt5.3-codex-spark.
 
-Use "EC-3 / operational slice / files(10)+test+doc" with CSx(IR)x Cadence
+Use "EC-3 / operational slice / files(4)+test+doc" with CSx(IR)x Cadence
 
 Reference: 
 ..\epistemic-control\hci-levels.md
@@ -30,12 +30,3 @@ READY FOR SPARK IMPLEMENTATION
 If not ready, explain the blocker and create/append the issue to:
 
 docs\concepts\execution-observability\issues.md
-
----
-
-When finished please estimate the token consumption by this prompt and add a entry to 
-..\epistemic-control\usage\<SC>\yyyyMMddhhmmss.md
-using the 
-..\epistemic-control\usage\prompt-usage-template.md
-as a template. Note your Model is gpt5.4-mini with medium reasoning.  See if you can query codex apis for token estimates.
-

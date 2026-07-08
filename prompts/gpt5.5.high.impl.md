@@ -1,8 +1,8 @@
 Please read operational slice (OS):
 
-docs\concepts\data-assets-and-materialized-outputs\012-cdl-yanroy-fixture-pipeline.md
+docs\concepts\geospatial-worker-plugins\009-aggregate-by-polygons.md
 
-Use "EC-3 / operational slice / files(10)+test+doc" 
+Use "EC-3 / operational slice / files(6)+test+doc" 
 
 Reference: 
 
@@ -20,6 +20,7 @@ Your task:
 * If the implementation appears to require more files, larger architectural changes, or behavior not described by the OS, stop and record the issue instead of expanding scope.
 * Run the relevant tests for the changed area. Prefer the project’s standard test command when available. If targeted tests are used, record exactly what was run.
 * Do not mark the OS as implemented unless the implementation and tests are complete.
+* consider using the WSL for GDAL testing.
 
 ---
 

@@ -1,10 +1,10 @@
 Please read operational slice (OS):
 
-docs\concepts\data-assets-and-materialized-outputs\011-fake-hpcc-artifact-and-data-asset-smoke-path.md
+docs\concepts\geospatial-worker-plugins\010-cdl-yanroy-fixture-workflow-and-docs.md
 
 Then implement and test the approved plan from the prior analysis.
 
-Use "EC-3 / operational slice / files(10)+test+doc+newfiles+cleanup" 
+Use "EC-3 / operational slice / files(4)+test+doc+newfiles+cleanup" 
 
 Reference: 
 ..\epistemic-control\hci-levels.md
@@ -16,8 +16,7 @@ Constraints:
 * Add or update tests required by the slice.
 * Keep changes small and reviewable.
 * Preserve existing public behavior except where the OS requires a change.
-
-
+* consider testing GDAL component in the WSL environment.
 
 ---
 
@@ -31,8 +30,8 @@ and mark the OS document above as implemented.
 
 If you find a major issue, blocker, or unsafe ambiguity, stop and create/append it to:
 
-docs\concepts\submission-cli-status\issues.md
-
+docs\concepts\<SC>\issues.md
+>
 ---
 
 When finished please estimate the token consumption by this prompt and add a entry to 

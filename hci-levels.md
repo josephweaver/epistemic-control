@@ -321,9 +321,55 @@ means:
 
 * Objective is a feature.
 * Only one production file may be changed before stopping.
+* Associated tests and documentation may also be changed if they are directly tied to the approved work.
+* Remaining work must be deferred to a later prompt.
 
 ---
 
+
+## Working Under a Change Budget
+
+A change budget is a **per-prompt review budget**, not a budget for the entire feature, chat session, branch, or strategic concept.
+
+When an objective is larger than the permitted budget, AI must not attempt to fit the whole feature into the current budget by hiding work, spreading work across exempt categories, or making unrelated files appear necessary.
+
+Instead, AI should work in this order:
+
+1. Design the implementation as if there were no change budget.
+2. Identify the natural sequence of implementation slices needed to complete that design.
+3. Select only the next slice that fits within the current HCI specification.
+4. Implement that slice.
+5. Report what changed, what remains, and what the next slice should be.
+6. Stop and wait for the human to review and prompt `next` before continuing.
+
+The next prompt may use the same HCI specification again, creating a new per-prompt budget for the next implementation slice.
+
+Example:
+
+```text
+EC-3 / feature / file(1)+test+doc
+```
+
+If the full feature naturally requires changes to four production files, AI should not modify all four files. It should first design the full four-file implementation, then perform only the first one-file slice, update associated tests and documentation as permitted, report the remaining three slices, and stop.
+
+A good completion report includes:
+
+* The intended full implementation design.
+* The slice completed under the current budget.
+* Files changed under the primary budget.
+* Files changed under budget modifiers.
+* Remaining implementation slices.
+* The suggested next prompt, usually `next`.
+
+Budget test:
+
+```text
+Could this work be reviewed as one bounded prompt response without requiring the human to understand the entire feature at once?
+```
+
+If the answer is no, the work should be sliced smaller.
+
+---
 ## file(N)
 
 Maximum number of production code files that may be modified.
@@ -430,6 +476,39 @@ Examples:
 
 Documentation files do not count toward file(N).
 
+---
+
+## +config
+
+AI may modify configuration files associated with the approved objective.
+
+Configuration files are files whose primary purpose is to configure, declare, or wire behavior rather than implement production logic.
+
+Examples:
+
+* `.json`
+* `.xml`
+* `.yml` / `.yaml`
+* `.toml`
+* `.ini`
+* `.env.example`
+* build, lint, test, formatter, packaging, or tool configuration files
+
+Configuration files do not count toward file(N) when the configuration change is directly associated with the approved work.
+
+Allowed configuration edits include:
+
+* Registering a new provider, adapter, command, plugin, or module introduced by the approved change.
+* Updating schema, manifest, or workflow configuration required by the approved change.
+* Updating test configuration required to run or validate the approved change.
+* Updating project metadata required by the approved change.
+
+`+config` does not allow unrelated environment, deployment, dependency, security, formatting, or tooling changes.
+
+AI must report all configuration files modified and explain why each was associated with the approved objective.
+
+---
+
 ## +cleanup
 
 AI may make bounded follow-up edits outside the primary production-code budget when those edits are required to preserve consistency after an approved change.
@@ -473,20 +552,22 @@ Cleanup files do not count against file(N), but AI must report all cleanup files
 
 AI may create new files required to support the approved objective.
 
-New files do not count against file(N) when they primarily contain newly introduced types, interfaces, structs, classes, adapters, tests, or documentation created as part of the approved design.
+New files do not count against file(N) when they are explicitly better organized as separate files than as edits to existing files.
+
+`+newfile` is not a general license to create extra files. It should be used only when the work would be clearer, safer, more maintainable, or more idiomatic if split into two or more files.
 
 Allowed new files include:
 
-* New class, struct, or interface files.
-* New adapter or implementation files.
-* New test files.
-* New documentation files.
-* New configuration templates directly required by the approved change.
+* New class, struct, or interface files when the type is substantial enough to stand on its own.
+* New adapter or implementation files when separating implementations improves organization.
+* New test files when there is no appropriate existing test file or when a separate test file is clearer.
+* New documentation files when the documentation is substantial enough to justify a separate file.
+* New configuration templates directly required by the approved change, when `+config` is also permitted or when the template is documentation-only.
 
 For example:
 
 ```text
-EC-3 / feature / file(1)+test+doc+cleanup+newfile
+EC-3 / feature / file(1)+test+doc+config+cleanup+newfile
 ```
 
 may allow AI to modify one existing production file while also creating files such as:
@@ -495,11 +576,12 @@ may allow AI to modify one existing production file while also creating files su
 target_environment.go
 local_environment.go
 target_environment_test.go
+target_environment.example.yml
 ```
 
-New files are exempt only when they support the approved objective. They may not be used to smuggle in unrelated functionality.
+New files are exempt only when they support the approved objective and are explicitly better organized as separate files. They may not be used to smuggle in unrelated functionality, bypass file(N), or avoid modifying the correct existing file.
 
-AI must report all new files created and explain their purpose.
+AI must report all new files created and explain both their purpose and why the work was better organized as separate files.
 
 
 ---
@@ -539,11 +621,14 @@ EC-3 / feature / file(1)+test+doc
 Meaning:
 
 * Work toward one feature.
-* Modify one production file.
-* Update tests and docs as needed.
-* Review the AI-proposed plan.
-* Report results.
-* Stop for review.
+* First design the full implementation regardless of budget.
+* Slice that design into reviewable steps.
+* Modify only one production file in the current prompt.
+* Update associated tests and documentation as needed.
+* Report the completed slice and the remaining slices.
+* Stop for review before continuing.
+
+If more work remains, the human may prompt `next` to authorize the next one-file budgeted slice.
 
 ---
 
@@ -560,6 +645,52 @@ Meaning:
 * Update tests and docs as needed.
 * Review the AI-proposed plan.
 * Stop for review.
+
+---
+
+## Configuration-Aware Operational Slice
+
+```text
+EC-3 / feature / file(3)+test+doc+config
+```
+
+Meaning:
+
+* Work toward one feature.
+* Modify up to three production files.
+* Update associated tests, documentation, and configuration files as needed.
+* Configuration edits must be directly associated with the approved work.
+* Report all configuration files changed.
+* Stop for review.
+
+---
+
+## Consecutive Budgeted Slices
+
+```text
+EC-3 / feature / file(1)+test+doc+config
+```
+
+Meaning:
+
+* The feature may require multiple files overall.
+* The current prompt permits only one production file.
+* AI should design the full feature first.
+* AI should implement the next coherent one-file slice.
+* AI may update associated tests, documentation, and configuration for that slice.
+* AI must stop after the slice and describe what `next` should do.
+
+Example flow:
+
+```text
+Prompt 1: implement slice 1 under file(1)+test+doc+config, then stop.
+Human: next
+Prompt 2: implement slice 2 under a new file(1)+test+doc+config budget, then stop.
+Human: next
+Prompt 3: implement slice 3 under a new file(1)+test+doc+config budget, then stop.
+```
+
+Each `next` prompt creates a new review budget. It does not retroactively expand the previous prompt's budget.
 
 ---
 
@@ -602,6 +733,3 @@ Meaning:
 * AI operates across the repository.
 * Large-scale changes permitted.
 * Human acts primarily as stakeholder.
-
-```
-```
