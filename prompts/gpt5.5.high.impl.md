@@ -1,6 +1,6 @@
 Please read operational slice (OS):
 
-docs\concepts\geospatial-worker-plugins\009-aggregate-by-polygons.md
+docs\concepts\sensitive-variable-propagation\009-concept-closure-and-doc-sync.md
 
 Use "EC-3 / operational slice / files(6)+test+doc" 
 
@@ -59,7 +59,7 @@ as a template.
 
 Record the model as:
 
-`gpt5.5 with high reasoning`
+`gpt5.4-mini with medium reasoning`
 
 If Codex can query token usage or token-estimate APIs, use them. Otherwise provide a best-effort estimate and clearly mark it as estimated.
 
